@@ -26,12 +26,12 @@ public class Acidente {
         this.id = id;
     }
 
-    public String getCausa() {
-        return causa;
+    public String getUf(){
+        return uf;
     }
 
-    public void setCausa(String causa) {
-        this.causa = causa;
+    public void setUf(String uf){
+        this.uf = uf;
     }
 
     public String getCidade() {
@@ -40,5 +40,45 @@ public class Acidente {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public String getTipoAcidente() {
+        return tipoAcidente;
+    }
+
+    public void setTipoAcidente(String tipoAcidente) {
+        this.tipoAcidente = tipoAcidente;
+    }
+
+    public String getCausa() {
+        return causa;
+    }
+
+    public void setCausa(String causa) {
+        this.causa = causa;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora(){
+        return hora;
+    }
+
+    public void setHora(String hora){
+        this.hora = hora;
+    }
+
+    public int getNumeroDeVítimas() {
+        return numeroDeVítimas;
+    }
+
+    public void setNumeroDeVítimas(int numeroDeVítimas) {
+        this.numeroDeVítimas = numeroDeVítimas;
     }
 }
