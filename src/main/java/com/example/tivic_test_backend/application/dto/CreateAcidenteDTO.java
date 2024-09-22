@@ -1,48 +1,29 @@
-package com.example.tivic_test_backend.domain.model;
+package com.example.tivic_test_backend.application.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 
-@Entity
-public class Acidente {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CreateAcidenteDTO {
+    @NotNull(message = "UF é obrigatório")
     private String uf;
+    @NotNull(message = "Cidade é obrigatório")
     private String cidade;
+    @NotNull(message = "Tipo do acidente é obrigatório")
     private String tipoAcidente;
+    @NotNull(message = "Causa é obrigatório")
     private String causa;
+    @NotNull(message = "Data é obrigatório")
     private String data;
+    @NotNull(message = "Hora é obrigatório")
     private String hora;
+    @NotNull(message = "Número de vítimas é obrigatório")
     private int numeroDeVítimas;
 
-    public Acidente() {}
-
-    public Acidente(String uf, String cidade, String tipoAcidente, String causa, String data, String hora, int numeroDeVítimas) {
-        this.uf = uf;
-        this.cidade = cidade;
-        this.tipoAcidente = tipoAcidente;
-        this.causa = causa;
-        this.data = data;
-        this.hora = hora;
-        this.numeroDeVítimas = numeroDeVítimas;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUf(){
+    // Getters e Setters
+    public String getUf() {
         return uf;
     }
 
-    public void setUf(String uf){
+    public void setUf(String uf) {
         this.uf = uf;
     }
 
@@ -78,11 +59,11 @@ public class Acidente {
         this.data = data;
     }
 
-    public String getHora(){
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(String hora){
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
