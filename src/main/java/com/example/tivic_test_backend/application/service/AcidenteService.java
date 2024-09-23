@@ -23,13 +23,35 @@ public class AcidenteService {
 
     public Acidente save(CreateAcidenteDTO dto) {
         Acidente acidente = new Acidente(
+            dto.getData_inversa(),
+            dto.getDia_semana(),
+            dto.getHorario(),
             dto.getUf(),
-            dto.getCidade(),
-            dto.getTipoAcidente(),
-            dto.getCausa(),
-            dto.getData().toString(),
-            dto.getHora(),
-            dto.getNumeroDeVítimas()
+            dto.getBr(),
+            dto.getKm(),
+            dto.getMunicipio(),
+            dto.getCausa_acidente(),
+            dto.getTipo_acidente(),
+            dto.getClassificacao_acidente(),
+            dto.getFase_dia(),
+            dto.getSentido_via(),
+            dto.getCondicao_metereologica(),
+            dto.getTipo_pista(),
+            dto.getTracado_via(),
+            dto.getUso_solo(),
+            dto.getPessoas(),
+            dto.getMortos(),
+            dto.getFeridos_leves(),
+            dto.getFeridos_graves(),
+            dto.getIlesos(),
+            dto.getIgnorados(),
+            dto.getFeridos(),
+            dto.getVeiculos(),
+            dto.getLatitude(),
+            dto.getLongitude(),
+            dto.getRegional(),
+            dto.getDelegacia(),
+            dto.getUop()
         );
 
         return acidenteRepository.save(acidente);
@@ -40,14 +62,14 @@ public class AcidenteService {
     }
 
     public List<Acidente> findByFilters(FilterAcidenteDTO filterAcidenteDTO) {
-        LocalDate dataInicio = filterAcidenteDTO.getDataInicio() != null ? LocalDate.parse(filterAcidenteDTO.getDataInicio()) : null;
-        LocalDate dataFim = filterAcidenteDTO.getDataFim() != null ? LocalDate.parse(filterAcidenteDTO.getDataFim()) : null;
+        LocalDate dataInicio = filterAcidenteDTO.getData_inicio() != null ? LocalDate.parse(filterAcidenteDTO.getData_inicio()) : null;
+        LocalDate dataFim = filterAcidenteDTO.getData_fim() != null ? LocalDate.parse(filterAcidenteDTO.getData_fim()) : null;
 
         return acidenteRepository.findAll(AcidenteSpecification.withFilters(
             filterAcidenteDTO.getUf(),
-            filterAcidenteDTO.getCidade(),
-            filterAcidenteDTO.getTipoAcidente(),
-            filterAcidenteDTO.getCausa(),
+            filterAcidenteDTO.getMunicipio(),
+            filterAcidenteDTO.getTipo_acidente(),
+            filterAcidenteDTO.getCausa_acidente(),
             dataInicio,
             dataFim
         ));
@@ -65,7 +87,7 @@ public class AcidenteService {
         acidente.setId(id);
         return acidenteRepository.save(acidente);
     }
-
+    
     public void delete(Long id) {
         if (!acidenteRepository.existsById(id)) {
             throw new RuntimeException("Acidente não encontrado");
