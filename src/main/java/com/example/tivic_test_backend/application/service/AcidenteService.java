@@ -5,7 +5,7 @@ import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
 import com.example.tivic_test_backend.application.exception.AppException;
 import com.example.tivic_test_backend.domain.model.Acidente;
 import com.example.tivic_test_backend.infrastructure.repository.AcidenteRepository;
-import com.example.tivic_test_backend.infrastructure.repository.specificartions.AcidenteSpecification;
+import com.example.tivic_test_backend.infrastructure.repository.specifications.AcidenteSpecification;
 
 import org.springframework.stereotype.Service;
 

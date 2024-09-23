@@ -1,4 +1,4 @@
-package com.example.tivic_test_backend.infrastructure.repository.specificartions;
+package com.example.tivic_test_backend.infrastructure.repository.specifications;
 
 import com.example.tivic_test_backend.domain.model.Acidente;
 import org.springframework.data.jpa.domain.Specification;
