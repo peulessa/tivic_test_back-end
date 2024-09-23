@@ -4,73 +4,73 @@ import jakarta.validation.constraints.NotNull;
 
 public class CreateAcidenteDTO {
     @NotNull(message = "Data Inversa é obrigatório")
-    private String data_inversa; // Ex: "2017-01-01"
+    private String data_inversa; 
     
     @NotNull(message = "Dia da Semana é obrigatório")
-    private String dia_semana; // Ex: "domingo"
+    private String dia_semana; 
     
     @NotNull(message = "Horário é obrigatório")
-    private String horario; // Ex: "01:45:00"
+    private String horario;
     
     @NotNull(message = "UF é obrigatório")
-    private String uf; // Ex: "RS"
+    private String uf; 
     
     @NotNull(message = "BR é obrigatório")
-    private String br; // Ex: "116"
+    private String br; 
     
     @NotNull(message = "KM é obrigatório")
-    private int km; // Ex: "34"
+    private int km; 
     
     @NotNull(message = "Município é obrigatório")
-    private String municipio; // Ex: "VACARIA"
+    private String municipio; 
     
     @NotNull(message = "Causa do Acidente é obrigatório")
-    private String causa_acidente; // Ex: "Defeito Mecânico no Veículo"
+    private String causa_acidente; 
     
     @NotNull(message = "Tipo do Acidente é obrigatório")
-    private String tipo_acidente; // Ex: "Colisão traseira"
+    private String tipo_acidente;
     
     @NotNull(message = "Classificação do Acidente é obrigatório")
-    private String classificacao_acidente; // Ex: "Com Vítimas Feridas"
+    private String classificacao_acidente;
     
     @NotNull(message = "Fase do Dia é obrigatório")
-    private String fase_dia; // Ex: "Plena Noite"
-    
+    private String fase_dia; 
+
     @NotNull(message = "Sentido da Via é obrigatório")
-    private String sentido_via; // Ex: "Decrescente"
+    private String sentido_via; 
     
     @NotNull(message = "Condição Meteorológica é obrigatório")
-    private String condicao_metereologica; // Ex: "Céu Claro"
+    private String condicao_metereologica; 
     
     @NotNull(message = "Tipo de Pista é obrigatório")
-    private String tipo_pista; // Ex: "Simples"
+    private String tipo_pista; 
     
     @NotNull(message = "Traçado da Via é obrigatório")
-    private String tracado_via; // Ex: "Reta"
+    private String tracado_via; 
     
     @NotNull(message = "Uso do Solo é obrigatório")
-    private String uso_solo; // Ex: "Não"
+    private String uso_solo; 
     
     @NotNull(message = "Número de Pessoas é obrigatório")
-    private int pessoas; // Total de pessoas envolvidas
+    private int pessoas;
     
-    private int mortos; // Ex: "0"
-    private int feridos_leves; // Ex: "4"
-    private int feridos_graves; // Ex: "0"
-    private int ilesos; // Ex: "2"
-    private int ignorados; // Ex: "0"
-    private int feridos; // Ex: "4"
-    private int veiculos; // Ex: "2"
+    private int mortos; 
+    private int feridos_leves; 
+    private int feridos_graves; 
+    private int ilesos; 
+    private int ignorados; 
+    private int feridos; 
+    private int veiculos; 
     
     @NotNull(message = "Latitude é obrigatória")
-    private double latitude; // Ex: "-28.5071196"
+    private double latitude;
     
     @NotNull(message = "Longitude é obrigatória")
-    private double longitude; // Ex: "-50.941176"
+    private double longitude;
     
-    private String regional; // Ex: "NA"
-    private String delegacia; // Ex: "NA"
-    private String uop; // Ex: "NA"
+    private String regional; 
+    private String delegacia; 
+    private String uop; 
 
     // Getters e Setters
 

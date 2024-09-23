@@ -2,14 +2,14 @@ package com.example.tivic_test_backend.application.dto;
 
 public class FilterAcidenteDTO {
     private String uf;
-    private String br; // Filtrar por BR
-    private String municipio; // Filtrar por município
-    private String causa_acidente; // Nome ajustado para refletir a nova estrutura
-    private String tipo_acidente; // Nome ajustado para refletir a nova estrutura
-    private String data_inicio; // Formato: "YYYY-MM-DD"
-    private String data_fim; // Formato: "YYYY-MM-DD"
-    private String dia_semana; // Filtrar por dia da semana
-    private String fase_dia; // Filtrar por fase do dia
+    private String br; 
+    private String municipio; 
+    private String causa_acidente;
+    private String tipo_acidente;
+    private String data_inicio;
+    private String data_fim;
+    private String dia_semana; 
+    private String fase_dia;
 
     public String getUf() {
         return uf;
