@@ -35,9 +35,9 @@ Instruções para Configuração e Execução do Projeto
 
 5. Documentação da API (Swagger)
 
-A documentação da API está disponível via Swagger após a execução do projeto. Acesse a documentação no seguinte endereço:
-
-         http://localhost:8080/swagger-ui/index.html
+   A documentação da API está disponível via Swagger após a execução do projeto. Acesse a documentação no seguinte endereço:
+   
+            http://localhost:8080/swagger-ui/index.html
 
 # Documentação Técnica
 ## Arquitetura Utilizada: Arquitetura Limpa (Clean Architecture)
