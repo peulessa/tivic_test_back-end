@@ -13,16 +13,7 @@ Instruções para Configuração e Execução do Projeto
 
    - No arquivo src/main/resources/application.properties, configure a conexão com seu banco de dados PostgreSQL.
 
-properties
-
-spring.application.name=tivic-test-backend
-spring.datasource.url=jdbc:postgresql://your-db-connection/your-db-name
-spring.datasource.username=postgres
-spring.datasource.password=postgres
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
-Explicação das propriedades:
+Exemplo:
 
     spring.datasource.url: URL de conexão com o banco de dados PostgreSQL.
     spring.datasource.username: Nome de usuário do banco de dados.
