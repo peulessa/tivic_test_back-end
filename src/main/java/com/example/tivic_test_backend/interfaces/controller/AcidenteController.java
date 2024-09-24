@@ -11,6 +11,7 @@ import jakarta.validation.Valid;
 
 import com.example.tivic_test_backend.application.dto.CreateAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
+import com.example.tivic_test_backend.application.dto.UfAcidenteDTO;
 import com.example.tivic_test_backend.application.service.AcidenteService;
 
 // import org.hibernate.mapping.Map; // Removed to avoid collision with java.util.Map
@@ -56,6 +57,16 @@ public class AcidenteController {
     public ResponseEntity<Acidente> addAcidente(@Valid @RequestBody CreateAcidenteDTO createAcidenteDTO) {
         Acidente novoAcidente = acidenteService.save(createAcidenteDTO);
         return new ResponseEntity<>(novoAcidente, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/agregados-por-uf")
+    @Operation(summary = "Obter acidentes agregados por UF", description = "Retorna uma lista de acidentes agregados por UF")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Lista de acidentes agregados por UF retornada com sucesso", content = @Content(schema = @Schema(implementation = Acidente.class)))
+    })
+    public ResponseEntity<List<UfAcidenteDTO>> getAcidentesAgregadosPorUf() {
+        List<UfAcidenteDTO> acidentesAgregados = acidenteService.getAcidentesAgregadosPorUf();
+        return ResponseEntity.ok(acidentesAgregados);
     }
 
 
