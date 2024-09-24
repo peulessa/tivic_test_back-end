@@ -31,44 +31,28 @@ No diretório raiz do projeto, execute o comando abaixo para instalar as depend�
 
 Depois de configurar o banco de dados e instalar as dependências, você pode executar o projeto com o comando:
 
-bash
-
-./mvnw spring-boot:run
+      ./mvnw spring-boot:run
 
 5. Documentação da API (Swagger)
 
 A documentação da API está disponível via Swagger após a execução do projeto. Acesse a documentação no seguinte endereço:
 
-bash
+      http://localhost:8080/swagger-ui/index.html
 
-http://localhost:8080/swagger-ui/index.html
-
-Aqui você encontrará todos os endpoints disponíveis para uso. 6. Testes Unitários
-
-O projeto contém testes unitários básicos para garantir a integridade do código. Você pode executá-los com o comando:
-
-bash
-
-./mvnw test
-
-Documentação Técnica
+# Documentação Técnica
 Arquitetura Utilizada: Arquitetura Limpa (Clean Architecture)
 
 Neste projeto, foi adotada a Arquitetura Limpa. Esse padrão oferece vários benefícios e foi escolhido para garantir que o sistema seja escalável, fácil de manter e independente de frameworks.
 Por que Clean Architecture?
 
     Separação de responsabilidades: A arquitetura limpa divide o projeto em camadas, onde cada camada tem uma responsabilidade clara. Isso mantém o código organizado e facilita a manutenção e o entendimento do sistema.
-
     Independência de frameworks: A arquitetura limpa minimiza a dependência de frameworks e bibliotecas externos, permitindo que o core da aplicação não seja impactado por mudanças nos frameworks.
-
     Facilidade de testes: Como as regras de negócio estão isoladas das camadas de interface (como controladores e infraestrutura), fica mais fácil realizar testes unitários e de integração, assegurando a qualidade do código.
 
 Camadas da Arquitetura
 
     Camada de Domínio: Contém as regras de negócio, representadas por Entidades e Use Cases. Essas classes estão livres de dependências externas e são reutilizáveis e fáceis de testar.
-
     Camada de Aplicação: Implementa a lógica de orquestração do sistema e gerencia as chamadas às regras de negócio. Nessa camada, temos DTOs e Services que implementam as regras de negócio baseadas nas interações do sistema.
-
     Camada de Infraestrutura: Responsável pela comunicação com bancos de dados, APIs externas e bibliotecas específicas. Aqui, utilizamos Repositórios e configurações específicas, como a integração com o PostgreSQL.
 
 Principais Componentes:
