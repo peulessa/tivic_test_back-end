@@ -12,6 +12,7 @@ import jakarta.validation.Valid;
 import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.CreateAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
+import com.example.tivic_test_backend.application.dto.MesAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.UfAcidenteDTO;
 import com.example.tivic_test_backend.application.service.AcidenteService;
 
@@ -25,7 +26,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
-import java.time.LocalDate;
+
 
 
 @RestController
@@ -79,6 +80,17 @@ public class AcidenteController {
     public List<CausaAcidenteDTO> getCountAcidentesByCausaAcidente() {
         return acidenteService.findCountAcidentesByCausaAcidente();
     }
+
+    @GetMapping("/acidentes-por-mes")
+    @Operation(summary = "Obter acidentes agrupados por mês", description = "Retorna uma lista de acidentes agrupados por mês do ano")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Lista de acidentes agrupados por mês retornada com sucesso", content = @Content(schema = @Schema(implementation = MesAcidenteDTO.class)))
+    })
+    public ResponseEntity<List<MesAcidenteDTO>> countAcidentesPorMes() {
+        List<MesAcidenteDTO> acidentesPorMes = acidenteService.countAcidentesByMes();
+        return ResponseEntity.ok(acidentesPorMes);
+    }
+
 
     @GetMapping
     @Operation(summary = "Obter todos os acidentes", description = "Retorna uma lista de todos os acidentes")

@@ -3,6 +3,7 @@ package com.example.tivic_test_backend.application.service;
 import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.CreateAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
+import com.example.tivic_test_backend.application.dto.MesAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.UfAcidenteDTO;
 import com.example.tivic_test_backend.application.exception.AppException;
 import com.example.tivic_test_backend.domain.model.Acidente;
@@ -95,6 +96,11 @@ public class AcidenteService {
     public List<CausaAcidenteDTO> findCountAcidentesByCausaAcidenteWithFilters(String causa_acidente, LocalDate dataInicio, LocalDate dataFim) {
         return acidenteRepository.countAcidentesByCausaAcidenteWithFilters(causa_acidente, dataInicio, dataFim);
     }
+
+    public List<MesAcidenteDTO> countAcidentesByMes() {
+        return acidenteRepository.countAcidentesByMes();
+    }
+
 
     public Acidente findById(Long id) {
         return acidenteRepository.findById(id)
