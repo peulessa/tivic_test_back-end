@@ -1,15 +1,18 @@
 # Tivic Test Backend
 
 Este projeto é uma API back-end desenvolvida em Spring Boot 3 para gerenciamento de acidentes. Ele utiliza uma arquitetura limpa e está conectado a um banco de dados PostgreSQL.
-Instruções para Configuração e Execução do Projeto
 
-1. Pré-requisitos
+Instruções para Configuração e Execução do Projeto:
+
+## Pré-requisitos
 
    - Java 17 ou superior instalado.
    - Maven instalado.
    - Banco de dados PostgreSQL configurado e rodando.
 
-2. Configurar o Banco de Dados
+## Passos para rodar o projeto
+
+1. Configurar o Banco de Dados
 
    No arquivo src/main/resources/application.properties, configure a conexão com seu banco de dados PostgreSQL.
 
@@ -21,19 +24,19 @@ Instruções para Configuração e Execução do Projeto
              spring.jpa.hibernate.ddl-auto: Define o comportamento de geração do esquema do banco. O valor update mantém o banco de dados atualizado sem perder dados.
              spring.jpa.show-sql: Exibe as queries SQL no console.
 
-3. Instalar Dependências e Compilar o Projeto
+2. Instalar Dependências e Compilar o Projeto
 
    No diretório raiz do projeto, execute o comando abaixo para instalar as dependências e compilar o código.
    
          ./mvnw clean install
 
-4. Executar o Projeto
+3. Executar o Projeto
 
    Depois de configurar o banco de dados e instalar as dependências, você pode executar o projeto com o comando:
    
          ./mvnw spring-boot:run
 
-5. Documentação da API (Swagger)
+4. Documentação da API (Swagger)
 
    A documentação da API está disponível via Swagger após a execução do projeto. Acesse a documentação no seguinte endereço:
    
