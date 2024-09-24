@@ -15,19 +15,17 @@ Instruções para Configuração e Execução do Projeto
 
 Exemplo:
 
-    spring.datasource.url: URL de conexão com o banco de dados PostgreSQL.
-    spring.datasource.username: Nome de usuário do banco de dados.
-    spring.datasource.password: Senha do banco de dados.
-    spring.jpa.hibernate.ddl-auto: Define o comportamento de geração do esquema do banco. O valor update mantém o banco de dados atualizado sem perder dados.
-    spring.jpa.show-sql: Exibe as queries SQL no console.
+       spring.datasource.url: URL de conexão com o banco de dados PostgreSQL.
+       spring.datasource.username: Nome de usuário do banco de dados.
+       spring.datasource.password: Senha do banco de dados.
+       spring.jpa.hibernate.ddl-auto: Define o comportamento de geração do esquema do banco. O valor update mantém o banco de dados atualizado sem perder dados.
+       spring.jpa.show-sql: Exibe as queries SQL no console.
 
 3. Instalar Dependências e Compilar o Projeto
 
 No diretório raiz do projeto, execute o comando abaixo para instalar as dependências e compilar o código.
 
-bash
-
-./mvnw clean install
+      ./mvnw clean install
 
 4. Executar o Projeto
 
