@@ -11,7 +11,7 @@ Instruções para Configuração e Execução do Projeto
 
 2. Configurar o Banco de Dados
 
-No arquivo src/main/resources/application.properties, configure a conexão com seu banco de dados PostgreSQL.
+   - No arquivo src/main/resources/application.properties, configure a conexão com seu banco de dados PostgreSQL.
 
 properties
 
