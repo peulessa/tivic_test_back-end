@@ -11,7 +11,7 @@ Instruções para Configuração e Execução do Projeto
 
 2. Configurar o Banco de Dados
 
-   - No arquivo src/main/resources/application.properties, configure a conexão com seu banco de dados PostgreSQL.
+   No arquivo src/main/resources/application.properties, configure a conexão com seu banco de dados PostgreSQL.
 
       Exemplo:
       
@@ -23,21 +23,21 @@ Instruções para Configuração e Execução do Projeto
 
 3. Instalar Dependências e Compilar o Projeto
 
-No diretório raiz do projeto, execute o comando abaixo para instalar as dependências e compilar o código.
-
-      ./mvnw clean install
+   No diretório raiz do projeto, execute o comando abaixo para instalar as dependências e compilar o código.
+   
+         ./mvnw clean install
 
 4. Executar o Projeto
 
-Depois de configurar o banco de dados e instalar as dependências, você pode executar o projeto com o comando:
-
-      ./mvnw spring-boot:run
+   Depois de configurar o banco de dados e instalar as dependências, você pode executar o projeto com o comando:
+   
+         ./mvnw spring-boot:run
 
 5. Documentação da API (Swagger)
 
 A documentação da API está disponível via Swagger após a execução do projeto. Acesse a documentação no seguinte endereço:
 
-      http://localhost:8080/swagger-ui/index.html
+         http://localhost:8080/swagger-ui/index.html
 
 # Documentação Técnica
 ## Arquitetura Utilizada: Arquitetura Limpa (Clean Architecture)
