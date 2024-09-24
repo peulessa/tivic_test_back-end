@@ -39,8 +39,8 @@ A documentação da API está disponível via Swagger após a execução do proj
 
       http://localhost:8080/swagger-ui/index.html
 
-## Documentação Técnica
-# Arquitetura Utilizada: Arquitetura Limpa (Clean Architecture)
+# Documentação Técnica
+## Arquitetura Utilizada: Arquitetura Limpa (Clean Architecture)
 
 Neste projeto, foi adotada a Arquitetura Limpa. Esse padrão oferece vários benefícios e foi escolhido para garantir que o sistema seja escalável, fácil de manter e independente de frameworks.
 Por que Clean Architecture?
