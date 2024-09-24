@@ -1,5 +1,6 @@
 package com.example.tivic_test_backend.application.service;
 
+import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.CreateAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.UfAcidenteDTO;
@@ -80,11 +81,19 @@ public class AcidenteService {
     public List<UfAcidenteDTO> getAcidentesAgregadosPorUf() {
         return acidenteRepository.countAcidentesByUf();
     }
-    
+
     public List<UfAcidenteDTO> getAcidentesAgregadosPorUfWithFilters(FilterAcidenteDTO filter) {
         LocalDate dataInicio = filter.getData_inicio() != null ? LocalDate.parse(filter.getData_inicio()) : null;
         LocalDate dataFim = filter.getData_fim() != null ? LocalDate.parse(filter.getData_fim()) : null;
         return acidenteRepository.countAcidentesByUfWithFilters(filter.getUf(), dataInicio, dataFim);
+    }
+
+        public List<CausaAcidenteDTO> findCountAcidentesByCausaAcidente() {
+        return acidenteRepository.countAcidentesByCausaAcidente();
+    }
+
+    public List<CausaAcidenteDTO> findCountAcidentesByCausaAcidenteWithFilters(String causa_acidente, LocalDate dataInicio, LocalDate dataFim) {
+        return acidenteRepository.countAcidentesByCausaAcidenteWithFilters(causa_acidente, dataInicio, dataFim);
     }
 
     public Acidente findById(Long id) {

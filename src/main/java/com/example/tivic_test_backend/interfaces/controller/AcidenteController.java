@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 
+import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.CreateAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.UfAcidenteDTO;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.time.LocalDate;
 
 
 @RestController
@@ -69,6 +71,14 @@ public class AcidenteController {
         return ResponseEntity.ok(acidentesAgregados);
     }
 
+    @GetMapping("/causa-acidente")
+    @Operation(summary = "Contar acidentes por causa", description = "Retorna a contagem de acidentes agrupados por causa de acidente")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Contagem de acidentes por causa retornada com sucesso", content = @Content(schema = @Schema(implementation = CausaAcidenteDTO.class)))
+    })
+    public List<CausaAcidenteDTO> getCountAcidentesByCausaAcidente() {
+        return acidenteService.findCountAcidentesByCausaAcidente();
+    }
 
     @GetMapping
     @Operation(summary = "Obter todos os acidentes", description = "Retorna uma lista de todos os acidentes")
