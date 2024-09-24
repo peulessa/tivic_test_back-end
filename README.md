@@ -13,13 +13,13 @@ Instruções para Configuração e Execução do Projeto
 
    - No arquivo src/main/resources/application.properties, configure a conexão com seu banco de dados PostgreSQL.
 
-Exemplo:
-
-       spring.datasource.url: URL de conexão com o banco de dados PostgreSQL.
-       spring.datasource.username: Nome de usuário do banco de dados.
-       spring.datasource.password: Senha do banco de dados.
-       spring.jpa.hibernate.ddl-auto: Define o comportamento de geração do esquema do banco. O valor update mantém o banco de dados atualizado sem perder dados.
-       spring.jpa.show-sql: Exibe as queries SQL no console.
+   Exemplo:
+   
+          spring.datasource.url: URL de conexão com o banco de dados PostgreSQL.
+          spring.datasource.username: Nome de usuário do banco de dados.
+          spring.datasource.password: Senha do banco de dados.
+          spring.jpa.hibernate.ddl-auto: Define o comportamento de geração do esquema do banco. O valor update mantém o banco de dados atualizado sem perder dados.
+          spring.jpa.show-sql: Exibe as queries SQL no console.
 
 3. Instalar Dependências e Compilar o Projeto
 
