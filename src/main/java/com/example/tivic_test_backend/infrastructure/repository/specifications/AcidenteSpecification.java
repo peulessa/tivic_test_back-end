@@ -10,7 +10,7 @@ import java.util.List;
 
 public class AcidenteSpecification {
 
-    public static Specification<Acidente> withFilters(String uf, String cidade, String tipoAcidente, String causa, LocalDate dataInicio, LocalDate dataFim) {
+    public static Specification<Acidente> withFilters(String uf, String municipio, String tipoAcidente, String causa, LocalDate dataInicio, LocalDate dataFim) {
         return (root, query, criteriaBuilder) -> {
 
             List<Predicate> predicates = new ArrayList<>();
@@ -19,8 +19,8 @@ public class AcidenteSpecification {
                 predicates.add(criteriaBuilder.equal(root.get("uf"), uf));
             }
 
-            if (cidade != null && !cidade.isEmpty()) {
-                predicates.add(criteriaBuilder.equal(root.get("cidade"), cidade));
+            if (municipio != null && !municipio.isEmpty()) {
+                predicates.add(criteriaBuilder.equal(root.get("municipio"), municipio));
             }
 
             if (tipoAcidente != null && !tipoAcidente.isEmpty()) {

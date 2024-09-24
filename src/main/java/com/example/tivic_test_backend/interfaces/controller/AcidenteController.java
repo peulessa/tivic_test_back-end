@@ -13,6 +13,7 @@ import com.example.tivic_test_backend.application.dto.AcidenteResumoDTO;
 import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.CreateAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
+import com.example.tivic_test_backend.application.dto.LocalizacaoAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.MesAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.UfAcidenteDTO;
 import com.example.tivic_test_backend.application.service.AcidenteService;
@@ -50,7 +51,7 @@ public class AcidenteController {
         });
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
-    
+
     @PostMapping
     @Operation(summary = "Adicionar um novo acidente", description = "Adiciona um novo acidente ao sistema")
     @ApiResponses(value = {
@@ -102,13 +103,14 @@ public class AcidenteController {
         return acidenteService.findAll();
     }
 
-    @GetMapping("/resumo")
-    @Operation(summary = "Obter resumo de acidentes", description = "Retorna um resumo de acidentes")
+    @GetMapping("/localizacoes-acidentes")
+    @Operation(summary = "Obter localizações de acidentes", description = "Retorna uma lista de localizações de acidentes")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Resumo de acidentes retornado com sucesso", content = @Content(schema = @Schema(implementation = AcidenteResumoDTO.class)))
+        @ApiResponse(responseCode = "200", description = "Lista de localizações de acidentes retornada com sucesso", content = @Content(schema = @Schema(implementation = LocalizacaoAcidenteDTO.class)))
     })
-    public AcidenteResumoDTO getAcidenteResumo() {
-        return acidenteService.getAcidenteResumo();
+    public ResponseEntity<List<LocalizacaoAcidenteDTO>> getLocalizacoesAcidentes() {
+        List<LocalizacaoAcidenteDTO> localizacoes = acidenteService.findAllLocalizacoes();
+        return ResponseEntity.ok(localizacoes);
     }
 
     @GetMapping("/busca-filtrada")
@@ -119,6 +121,16 @@ public class AcidenteController {
     public ResponseEntity<List<Acidente>> buscarAcidentes(FilterAcidenteDTO filterAcidenteDTO) {
         List<Acidente> acidentes = acidenteService.findByFilters(filterAcidenteDTO);
         return ResponseEntity.ok(acidentes);
+    }
+
+
+    @GetMapping("/resumo")
+    @Operation(summary = "Obter resumo de acidentes", description = "Retorna um resumo de acidentes")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Resumo de acidentes retornado com sucesso", content = @Content(schema = @Schema(implementation = AcidenteResumoDTO.class)))
+    })
+    public AcidenteResumoDTO getAcidenteResumo() {
+        return acidenteService.getAcidenteResumo();
     }
 
     @GetMapping("/{id}")

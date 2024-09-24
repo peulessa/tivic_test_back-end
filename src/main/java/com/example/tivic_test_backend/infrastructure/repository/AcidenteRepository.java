@@ -2,6 +2,7 @@ package com.example.tivic_test_backend.infrastructure.repository;
 
 import com.example.tivic_test_backend.application.dto.AcidenteResumoDTO;
 import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
+import com.example.tivic_test_backend.application.dto.LocalizacaoAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.MesAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.UfAcidenteDTO;
 import com.example.tivic_test_backend.domain.model.Acidente;
@@ -66,6 +67,11 @@ public interface AcidenteRepository extends JpaRepository<Acidente, Long>, JpaSp
         "COUNT(a), SUM(a.mortos), SUM(a.feridos_leves), SUM(a.feridos_graves)) " +
         "FROM Acidente a")
     AcidenteResumoDTO getAcidenteResumo();
+
+    @Query("SELECT new com.example.tivic_test_backend.application.dto.LocalizacaoAcidenteDTO(a.latitude, a.longitude) " +
+       "FROM Acidente a")
+    List<LocalizacaoAcidenteDTO> findAllLocalizacoes();
+
 
 
 }
