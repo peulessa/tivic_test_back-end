@@ -5,7 +5,9 @@ Instruções para Configuração e Execução do Projeto
 
 1. Pré-requisitos
 
-   - Java 17 ou superior instalado.
+   - ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+Java 17 ou superior instalado.
    - Maven instalado.
    - Banco de dados PostgreSQL configurado e rodando.
 
