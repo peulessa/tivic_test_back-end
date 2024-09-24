@@ -5,9 +5,9 @@ Instruções para Configuração e Execução do Projeto
 
 1. Pré-requisitos
 
-   Java 17 ou superior instalado.
-   Maven instalado.
-   Banco de dados PostgreSQL configurado e rodando.
+   - Java 17 ou superior instalado.
+   - Maven instalado.
+   - Banco de dados PostgreSQL configurado e rodando.
 
 2. Configurar o Banco de Dados
 
