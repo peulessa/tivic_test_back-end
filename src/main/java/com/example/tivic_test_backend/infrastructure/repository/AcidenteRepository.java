@@ -54,11 +54,13 @@ public interface AcidenteRepository extends JpaRepository<Acidente, Long>, JpaSp
         @Param("data_fim") LocalDate data_fim
     );
 
-    @Query("SELECT new com.example.tivic_test_backend.application.dto.MesAcidenteDTO(SUBSTRING(a.data_inversa, 6, 2), COUNT(a)) " +
+    @Query("SELECT new com.example.tivic_test_backend.application.dto.MesAcidenteDTO(" +
+       "SUBSTRING(a.data_inversa, 6, 2), COUNT(a), SUM(a.mortos)) " +
        "FROM Acidente a " +
        "GROUP BY SUBSTRING(a.data_inversa, 6, 2) " +
        "ORDER BY SUBSTRING(a.data_inversa, 6, 2)")
     List<MesAcidenteDTO> countAcidentesByMes();
+
 
 }
 

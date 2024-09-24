@@ -3,10 +3,12 @@ package com.example.tivic_test_backend.application.dto;
 public class MesAcidenteDTO {
     private String mes;
     private Long totalAcidentes;
+    private Long totalMortes;
 
-    public MesAcidenteDTO(String mes, Long totalAcidentes) {
+    public MesAcidenteDTO(String mes, Long totalAcidentes, Long totalMortes) {
         this.mes = mes;
         this.totalAcidentes = totalAcidentes;
+        this.totalMortes = totalMortes;
     }
 
     public String getMes() {
@@ -23,5 +25,13 @@ public class MesAcidenteDTO {
 
     public void setTotalAcidentes(Long totalAcidentes) {
         this.totalAcidentes = totalAcidentes;
+    }
+
+    public Long getTotalMortes() {
+        return totalMortes;
+    }
+
+    public void setTotalMortes(Long totalMortes) {
+        this.totalMortes = totalMortes;
     }
 }
