@@ -1,4 +1,4 @@
-## Tivic Test Backend
+### Tivic Test Backend
 
 Este projeto é uma API back-end desenvolvida em Spring Boot 3 para gerenciamento de acidentes. Ele utiliza uma arquitetura limpa e está conectado a um banco de dados PostgreSQL.
 Instruções para Configuração e Execução do Projeto
