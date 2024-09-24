@@ -1,5 +1,6 @@
 package com.example.tivic_test_backend.infrastructure.repository;
 
+import com.example.tivic_test_backend.application.dto.AcidenteResumoDTO;
 import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.MesAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.UfAcidenteDTO;
@@ -60,6 +61,11 @@ public interface AcidenteRepository extends JpaRepository<Acidente, Long>, JpaSp
        "GROUP BY SUBSTRING(a.data_inversa, 6, 2) " +
        "ORDER BY SUBSTRING(a.data_inversa, 6, 2)")
     List<MesAcidenteDTO> countAcidentesByMes();
+
+    @Query("SELECT new com.example.tivic_test_backend.application.dto.AcidenteResumoDTO(" +
+        "COUNT(a), SUM(a.mortos), SUM(a.feridos_leves), SUM(a.feridos_graves)) " +
+        "FROM Acidente a")
+    AcidenteResumoDTO getAcidenteResumo();
 
 
 }

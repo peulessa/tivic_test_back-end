@@ -1,5 +1,6 @@
 package com.example.tivic_test_backend.application.service;
 
+import com.example.tivic_test_backend.application.dto.AcidenteResumoDTO;
 import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.CreateAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
@@ -62,6 +63,10 @@ public class AcidenteService {
 
     public List<Acidente> findAll() {
         return acidenteRepository.findAll();
+    }
+
+    public AcidenteResumoDTO getAcidenteResumo() {
+        return acidenteRepository.getAcidenteResumo();
     }
 
     public List<Acidente> findByFilters(FilterAcidenteDTO filterAcidenteDTO) {

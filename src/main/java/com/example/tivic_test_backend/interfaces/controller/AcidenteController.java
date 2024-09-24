@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 
+import com.example.tivic_test_backend.application.dto.AcidenteResumoDTO;
 import com.example.tivic_test_backend.application.dto.CausaAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.CreateAcidenteDTO;
 import com.example.tivic_test_backend.application.dto.FilterAcidenteDTO;
@@ -99,6 +100,15 @@ public class AcidenteController {
     })
     public List<Acidente> getAllAcidentes() {
         return acidenteService.findAll();
+    }
+
+    @GetMapping("/resumo")
+    @Operation(summary = "Obter resumo de acidentes", description = "Retorna um resumo de acidentes")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Resumo de acidentes retornado com sucesso", content = @Content(schema = @Schema(implementation = AcidenteResumoDTO.class)))
+    })
+    public AcidenteResumoDTO getAcidenteResumo() {
+        return acidenteService.getAcidenteResumo();
     }
 
     @GetMapping("/busca-filtrada")
