@@ -39,8 +39,8 @@ A documentação da API está disponível via Swagger após a execução do proj
 
       http://localhost:8080/swagger-ui/index.html
 
-# Documentação Técnica
-Arquitetura Utilizada: Arquitetura Limpa (Clean Architecture)
+## Documentação Técnica
+# Arquitetura Utilizada: Arquitetura Limpa (Clean Architecture)
 
 Neste projeto, foi adotada a Arquitetura Limpa. Esse padrão oferece vários benefícios e foi escolhido para garantir que o sistema seja escalável, fácil de manter e independente de frameworks.
 Por que Clean Architecture?
@@ -63,7 +63,7 @@ Principais Componentes:
  - Repository: Interface para a comunicação com o banco de dados, utilizando JPA.
  - Model: Contém as entidades da aplicação.
 
-Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
  - Spring Boot 3
  - PostgreSQL
@@ -71,3 +71,16 @@ Tecnologias Utilizadas
  - Hibernate (JPA)
  - Swagger (para a documentação da API)
  - Arquitetura Limpa (Clean Architecture)
+
+# Tratamento de Erros
+
+Na Camada de Interfaces, além de lidar com as requisições e respostas, há um mecanismo robusto de tratamento de erros implementado para garantir que o sistema responda de forma adequada e padronizada aos usuários quando algo inesperado acontece. Esse tratamento é feito principalmente com o uso de Global Exception Handlers no Spring Boot.
+Tratamento de Erros:
+
+ - Global Exception Handler: Utilizo uma classe anotada com @ControllerAdvice, que captura exceções lançadas em toda a aplicação. Isso permite que todas as exceções sejam tratadas de maneira centralizada, fornecendo respostas        claras e uniformes, geralmente no formato JSON, contendo detalhes sobre o erro.
+
+ - Custom Exceptions: São criadas exceções personalizadas para diferentes cenários de erro (como ResourceNotFoundException, InvalidInputException, etc.). Isso permite que cada tipo de erro tenha uma resposta apropriada.
+
+ - HTTP Status Codes: Cada erro tratado é mapeado para um código de status HTTP correspondente, como 404 Not Found, 400 Bad Request, 500 Internal Server Error, etc., facilitando a identificação da natureza do erro por quem está      consumindo a API.
+
+Dessa forma, a camada de interfaces assegura que os erros sejam tratados de forma coerente e padronizada, melhorando a experiência do usuário e facilitando o processo de depuração.
