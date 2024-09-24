@@ -1,4 +1,4 @@
-## Tivic Test Backend
+# Tivic Test Backend
 
 Este projeto é uma API back-end desenvolvida em Spring Boot 3 para gerenciamento de acidentes. Ele utiliza uma arquitetura limpa e está conectado a um banco de dados PostgreSQL.
 Instruções para Configuração e Execução do Projeto
@@ -63,7 +63,7 @@ Principais Componentes:
  - Repository: Interface para a comunicação com o banco de dados, utilizando JPA.
  - Model: Contém as entidades da aplicação.
 
-# Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
  - Spring Boot 3
  - PostgreSQL
@@ -72,7 +72,7 @@ Principais Componentes:
  - Swagger (para a documentação da API)
  - Arquitetura Limpa (Clean Architecture)
 
-# Tratamento de Erros
+## Tratamento de Erros
 
 Na Camada de Interfaces, além de lidar com as requisições e respostas, há um mecanismo robusto de tratamento de erros implementado para garantir que o sistema responda de forma adequada e padronizada aos usuários quando algo inesperado acontece. Esse tratamento é feito principalmente com o uso de Global Exception Handlers no Spring Boot.
 Tratamento de Erros:
@@ -84,3 +84,7 @@ Tratamento de Erros:
  - HTTP Status Codes: Cada erro tratado é mapeado para um código de status HTTP correspondente, como 404 Not Found, 400 Bad Request, 500 Internal Server Error, etc., facilitando a identificação da natureza do erro por quem está      consumindo a API.
 
 Dessa forma, a camada de interfaces assegura que os erros sejam tratados de forma coerente e padronizada, melhorando a experiência do usuário e facilitando o processo de depuração.
+
+## Documentação
+
+A aplicação está toda documentada com o swagger, com intúito de auxiliar o consumidor da mesma, exibindo cada rota disponível e o que cada uma tem de responsabilidade.
