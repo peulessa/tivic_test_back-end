@@ -45,35 +45,29 @@ Arquitetura Utilizada: Arquitetura Limpa (Clean Architecture)
 Neste projeto, foi adotada a Arquitetura Limpa. Esse padrão oferece vários benefícios e foi escolhido para garantir que o sistema seja escalável, fácil de manter e independente de frameworks.
 Por que Clean Architecture?
 
-    Separação de responsabilidades: A arquitetura limpa divide o projeto em camadas, onde cada camada tem uma responsabilidade clara. Isso mantém o código organizado e facilita a manutenção e o entendimento do sistema.
-    Independência de frameworks: A arquitetura limpa minimiza a dependência de frameworks e bibliotecas externos, permitindo que o core da aplicação não seja impactado por mudanças nos frameworks.
-    Facilidade de testes: Como as regras de negócio estão isoladas das camadas de interface (como controladores e infraestrutura), fica mais fácil realizar testes unitários e de integração, assegurando a qualidade do código.
+ - Separação de responsabilidades: A arquitetura limpa divide o projeto em camadas, onde cada camada tem uma responsabilidade clara. Isso mantém o código organizado e facilita a manutenção e o entendimento do sistema.
+ - Independência de frameworks: A arquitetura limpa minimiza a dependência de frameworks e bibliotecas externos, permitindo que o core da aplicação não seja impactado por mudanças nos frameworks.
+ - Facilidade de testes: Como as regras de negócio estão isoladas das camadas de interface (como controladores e infraestrutura), fica mais fácil realizar testes unitários e de integração, assegurando a qualidade do código.
 
 Camadas da Arquitetura
 
-    Camada de Domínio: Contém as regras de negócio, representadas por Entidades e Use Cases. Essas classes estão livres de dependências externas e são reutilizáveis e fáceis de testar.
-    Camada de Aplicação: Implementa a lógica de orquestração do sistema e gerencia as chamadas às regras de negócio. Nessa camada, temos DTOs e Services que implementam as regras de negócio baseadas nas interações do sistema.
-    Camada de Infraestrutura: Responsável pela comunicação com bancos de dados, APIs externas e bibliotecas específicas. Aqui, utilizamos Repositórios e configurações específicas, como a integração com o PostgreSQL.
+ - Camada de Domínio: Contém as regras de negócio, representadas por Entidades e Use Cases. Essas classes estão livres de dependências externas e são reutilizáveis e fáceis de testar.
+ - Camada de Aplicação: Implementa a lógica de orquestração do sistema e gerencia as chamadas às regras de negócio. Nessa camada, temos DTOs e Services que implementam as regras de negócio baseadas nas interações do sistema.
+ - Camada de Infraestrutura: Responsável pela comunicação com bancos de dados. Aqui, são utilizados Repositórios e configurações específicas, como a integração com o PostgreSQL.
+ - Camada de Interfaces: Responsável por lidar com as interações externas, como as APIs e as interfaces de usuário. Aqui, essa camada inclui os Controllers e as interfaces de comunicação com o usuário.
 
 Principais Componentes:
 
-    Controller: Responsável por receber as requisições HTTP e orquestrar as chamadas para as camadas de aplicação.
-    Service: Contém a lógica de orquestração e as regras de negócio.
-    Repository: Interface para a comunicação com o banco de dados, utilizando JPA.
+ - Controller: Responsável por receber as requisições HTTP e orquestrar as chamadas para as camadas de aplicação.
+ - Service: Contém a lógica de orquestração e as regras de negócio.
+ - Repository: Interface para a comunicação com o banco de dados, utilizando JPA.
+ - Model: Contém as entidades da aplicação.
 
 Tecnologias Utilizadas
 
-    Spring Boot 3
-    PostgreSQL
-    Maven
-    Hibernate (JPA)
-    Swagger (para a documentação da API)
-    Arquitetura Limpa (Clean Architecture)
-
-Como Contribuir
-
-    Faça um fork do projeto.
-    Crie uma branch (git checkout -b feature/NovaFeature).
-    Faça commit das suas alterações (git commit -m 'Adiciona nova feature').
-    Faça push para a branch (git push origin feature/NovaFeature).
-    Crie um novo Pull Request.
+ - Spring Boot 3
+ - PostgreSQL
+ - Maven
+ - Hibernate (JPA)
+ - Swagger (para a documentação da API)
+ - Arquitetura Limpa (Clean Architecture)
